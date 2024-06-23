@@ -12,7 +12,7 @@ export default function App() {
     <View> 
 <Card style={styles.card1}>
 <Text style={styles.first_text}>Language </Text>
-<Text style={styles.greater_than}></Text>
+<Text style={styles.greater_than}>></Text>
 </Card>
 <View style={{height: 20}}/>
 <Card style={styles.card1}>
@@ -58,10 +58,14 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   card1: {
-    height: 50,
+    height: 60,
     width: '100%',
-   // backgroundColor: '#FF00FF',
+   backgroundColor: '#FF00FF',
    borderRadius: 10,
+  backgroundColor: '#FFFFFF',
+  shadowColor: 'transparent',
+  borderBottomWidth: 0.2,
+   
   },
   greater_than: {
 marginLeft: 320,marginTop: -28, fontWeight: 'bold',fontSize:22
