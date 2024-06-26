@@ -2,9 +2,11 @@
 
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
 import { Card, Switch } from 'react-native-paper';
 import Feather from 'react-native-vector-icons/Feather';
+import Page1 from './Page1';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function Page2() {
   return (
@@ -46,19 +48,19 @@ export default function Page2() {
       </View>
       <View style={styles.bottomBar}>
         <View>
-          <Feather name="home" size={40} color="black" />
+        <Image source={require('./assets/home.png')} style={{height: 30, width: 30}} />
           <Text>Home</Text>
         </View>
         <View>
-          <Feather name="credit-card" size={40} color="black" />
+        <Image source={require('./assets/myCards.png')} style={{height: 30, width: 30}} />
           <Text>My Cards</Text>
         </View>
         <View>
-          <Feather name="pie-chart" size={40} color="black" />
+        <Image source={require('./assets/statictics.png')} style={{height: 30, width: 30}}/>
           <Text>Statistics</Text>
         </View>
         <View>
-          <Feather name="settings" size={40} color="black" />
+        <Image source={require('./assets/settings.png')} style={{height: 30, width: 30}}/>
           <Text>Settings</Text>
         </View>
       </View>

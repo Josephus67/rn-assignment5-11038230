@@ -1,45 +1,46 @@
 
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-paper';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function Page1() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{flexDirection: 'row'}}>
-        <Image source={require('./assets/Ellipse.png')} style={styles.prof_pic} />
+        <Image source={require('./assets/profile.png')} style={styles.prof_pic} />
         <View style={{marginTop: 60, marginLeft: 20}}>
           <Text style={{fontSize: 20}}>Welcome back</Text>
           <Text style={{ fontWeight: 'bold', fontSize: 26}}>Eric Atsu</Text>
           <Card style={{height: 60, width: 60, borderRadius: 30, marginLeft: 180, marginTop: -55, justifyContent: 'space-around'}}>
             
-            <Feather name="search" size={40} color="black" style={{marginLeft: 8}} />
+            <Image source={require('./assets/search.png')} color="black" style={{marginLeft: 8, height: 40, width: 40}} />
           </Card>
         </View>
       </View>
-      <View style={{height: 20}} />
+      <View style={{height: 30}} />
       <Image source={require('./assets/Card.png')} 
-      style={{height: 220, width: '95%', marginLeft: 15}}
+      style={{height: 230, width: '95%', marginLeft: 10}}
       />
-      <View style={{height: 20}} />
+      <View style={{height: 30}} />
       <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
         <View>
-        <Image source={require('./assets/send.png')} />
+        <Image source={require('./assets/send.png')} style={{height: 35, width: 25}} />
           <Text>Sent</Text>
         </View>
         <View>
-        <Image source={require('./assets/recieve.png')} />
+        <Image source={require('./assets/recieve.png')} style={{height: 35, width: 25}}/>
           <Text>Received</Text>
         </View>
         <View>
-        <Image source={require('./assets/loan.png')} />
+        <Image source={require('./assets/loan.png')} style={{height: 35, width: 35}}/>
           <Text>Loan</Text>
         </View>
         <View>
-        <Image source={require('./assets/moneyTransfer.png')} />
+        <Image source={require('./assets/moneyTransfer.png')} style={{height: 35, width: 35}}/>
           <Text>Top UP</Text>
         </View>
       </View>
@@ -51,95 +52,8 @@ export default function Page1() {
       <View style={{height: 5}} />
 
      
-  { /*     <ScrollView vertical showsVerticalScrollIndicator={false}>
-
-        <Card style={styles.card1}>
-    <View style={{flexDirection: 'row'}}>
-
-      <Card style={styles.card_apple}>
-<AntDesign name="apple1" size={30} color="#000" style={{marginLeft: 8}}/>
-</Card>
-        <View style={{flexDirection: 'row'}}>
-    <Text style={{fontWeight: 'bold', fontSize: 21, marginLeft: 10}}>Apple store</Text>
-    <Text style={{ marginLeft: 140, fontWeight: 'bold', fontSize: 20}}>-$5,99</Text>
-    </View>
-    <Text style={{marginTop: 30, marginLeft: -300}}>Entertainment</Text>
-    </View>
-    </Card>
-
-
-<View style={{height:10}}/>
-
-
-        <Card style={styles.card1}>
-    <View style={{flexDirection: 'row'}}>
-
-      <Card style={styles.card_apple}>
-<AntDesign name="apple1" size={30} color="#000" style={{marginLeft: 8}}/>
-</Card>
-        <View style={{flexDirection: 'row'}}>
-    <Text style={{fontWeight: 'bold', fontSize: 21, marginLeft: 10}}>Spotify</Text>
-    <Text style={{ marginLeft: 140, fontWeight: 'bold', fontSize: 20}}>-$12,99</Text>
-    </View>
-    <Text style={{marginTop: 30, marginLeft: -300}}>Music</Text>
-    </View>
-    </Card> 
-   <View style={{height:10,}} />
-
-   <Card style={styles.card1}>
-    <View style={{flexDirection: 'row'}}>
-
-      <Card style={styles.card_apple}>
-<AntDesign name="apple1" size={30} color="#000" style={{marginLeft: 8}}/>
-</Card>
-        <View style={{flexDirection: 'row'}}>
-    <Text style={{fontWeight: 'bold', fontSize: 21, marginLeft: 10}}>Money Transfer</Text>
-    <Text style={{ marginLeft: 140, fontWeight: 'bold', fontSize: 20}}>$300</Text>
-    </View>
-    <Text style={{marginTop: 30, marginLeft: -300}}>Transaction</Text>
-    </View>
-    </Card> 
-
-    <Card style={styles.card1}>
-    <View style={{flexDirection: 'row'}}>
-
-
-      <Card style={styles.card_apple}>
-<AntDesign name="apple1" size={30} color="#000" style={{marginLeft: 8}}/>
-</Card>
-        <View style={{flexDirection: 'row'}}>
-    <Text style={{fontWeight: 'bold', fontSize: 21, marginLeft: 10}}>Grocery</Text>
-    <Text style={{ marginLeft: 140, fontWeight: 'bold', fontSize: 20}}>-$88</Text>
-    </View>
-    <Text style={{marginTop: 30, marginLeft: -300}}>Entertainment</Text>
-    </View>
-    </Card>
-        </ScrollView>
-        </Card>
-        */}
-     
-      
-      {/*
-      <View style={styles.bottomBar}>
-        <View>
-          <Feather name="home" size={40} color="black" />
-          <Text>Home</Text>
-        </View>
-        <View>
-          <Feather name="credit-card" size={40} color="black" />
-          <Text>My Cards</Text>
-        </View>
-        <View>
-          <Feather name="pie-chart" size={40} color="black" />
-          <Text>Statistics</Text>
-        </View>
-        <View>
-          <Feather name="settings" size={40} color="black" />
-          <Text>Settings</Text>
-        </View>
-      </View>
-      */}
-      <Card style={{height:250, width:'100%'}}>
+  
+      <Card style={{height:280, width:'100%'}}>
 <ScrollView vertical showsVerticalScrollIndicator={false}>
     <Card style={styles.card1}>
     <View style={{flexDirection: 'row'}}>
@@ -216,6 +130,26 @@ export default function Page1() {
     </Card>
     </ScrollView>
     </Card>
+
+
+    <View style={styles.bottomBar}>
+        <View>
+        <Image source={require('./assets/home.png')} />
+          <Text>Home</Text>
+        </View>
+        <View>
+        <Image source={require('./assets/myCards.png')} />
+          <Text>My Cards</Text>
+        </View>
+        <View>
+        <Image source={require('./assets/statictics.png')} />
+          <Text>Statistics</Text>
+        </View>
+        <View>
+        <Image source={require('./assets/settings.png')} />
+          <Text>Settings</Text>
+        </View>
+      </View>
       
   </SafeAreaView>
   );
