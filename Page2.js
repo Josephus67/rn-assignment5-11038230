@@ -1,5 +1,5 @@
 
-
+/*
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
@@ -43,7 +43,7 @@ export default function Page2() {
       </View>
       <View style={{ height: 30 }} />
       <View style={{ flexDirection: 'row' }}>
-        <Text style={{ fontSize: 25, fontWeight: 'bold' }}>Theme</Text>
+        <Text style={{ fontSize: 25, fontWeight: 'bold', marginLeft: 30 }}>Theme</Text>
         <Switch style={{ marginLeft: 220, transform: [{ scale: 1.8 }] }} />
       </View>
       <View style={styles.bottomBar}>
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingLeft: 20,
+   // paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 50,
      alignContent: 'space-evenly',
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   first_text: {
     fontSize: 22,
     fontWeight: 'bold',
-    marginLeft: 10,
+    marginLeft: 30,
   },
   card1: {
     height: 60,
@@ -108,3 +108,125 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
+*/
+
+
+import React, { useState, useEffect } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, SafeAreaView, Image, useColorScheme } from 'react-native';
+import { Card, Switch, Provider as PaperProvider } from 'react-native-paper';
+import Feather from 'react-native-vector-icons/Feather';
+import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+
+export default function Page2() {
+  const colorScheme = useColorScheme();
+  const [isDarkTheme, setIsDarkTheme] = useState(colorScheme === 'dark');
+
+  useEffect(() => {
+    setIsDarkTheme(colorScheme === 'dark');
+  }, [colorScheme]);
+
+  const handleThemeToggle = () => {
+    setIsDarkTheme(!isDarkTheme);
+  };
+
+  const theme = isDarkTheme ? DarkTheme : DefaultTheme;
+
+  return (
+    <PaperProvider theme={theme}>
+      <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
+        <View>
+          <Text style={{ fontSize: 28, fontWeight: 'bold', textAlign: 'center', marginTop: 30, color: theme.colors.text, }}>Settings</Text>
+        </View>
+        <View>
+          <Card style={[styles.card1, { backgroundColor: theme.colors.card }]}>
+            <Text style={[styles.first_text, { color: theme.colors.text }]}>Language </Text>
+            <Text style={[styles.greater_than, { color: theme.colors.text }]}>></Text>
+          </Card>
+          <View style={{ height: 0 }} />
+          <Card style={[styles.card1, { backgroundColor: theme.colors.card }]}>
+            <Text style={[styles.first_text, { color: theme.colors.text }]}>My Profile</Text>
+            <Text style={[styles.greater_than, { color: theme.colors.text }]}>></Text>
+          </Card>
+          <Card style={[styles.card1, { backgroundColor: theme.colors.card }]}>
+            <Text style={[styles.first_text, { color: theme.colors.text }]}>Contact Us</Text>
+            <Text style={[styles.greater_than, { color: theme.colors.text }]}>></Text>
+          </Card>
+          <Card style={[styles.card1, { backgroundColor: theme.colors.card }]}>
+            <Text style={[styles.first_text, { color: theme.colors.text }]}>Change password</Text>
+            <Text style={[styles.greater_than, { color: theme.colors.text }]}>></Text>
+          </Card>
+          <Card style={[styles.card1, { backgroundColor: theme.colors.card }]}>
+            <Text style={[styles.first_text, { color: theme.colors.text }]}>Privacy policy</Text>
+            <Text style={[styles.greater_than, { color: theme.colors.text }]}>></Text>
+          </Card>
+      
+        <Card style={[styles.theme_card, { Color: theme.colors.text }]}>
+        <View style={{ flexDirection: 'row' }}>
+          
+          <Text style={{ fontSize: 25, fontWeight: 'bold', marginLeft: 30, color: theme.colors.text }}>Theme</Text>
+          <Switch style={{ marginLeft: 220, transform: [{ scale: 1.8 }] }} value={isDarkTheme} onValueChange={handleThemeToggle} />
+        
+        </View>
+        </Card>
+        </View>
+        
+      </SafeAreaView>
+    </PaperProvider>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    //paddingRight: 20,
+    paddingTop: 50,
+    alignContent: 'space-evenly',
+    marginTop: -90,
+    backgroundColor: '#fff',
+  },
+  bottomBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    height: 60,
+  },
+  first_text: {
+    marginTop: 10,
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginLeft: 30,
+  },
+  card1: {
+    height: 100,
+    width: '100%',
+    borderRadius: 10,
+    shadowColor: 'transparent',
+    borderBottomWidth: 0.2,
+  },
+  greater_than: {
+    marginLeft: 320,
+    marginTop: -28,
+    fontWeight: 'bold',
+    fontSize: 22,
+  },
+  bottomBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    bottom: 0,
+    position: 'absolute',
+    height: 60,
+    width: '100%',
+  },
+  theme_card: {
+height: 180,
+marginLeft: -20,
+ width: 460, 
+ borderRadius: -10,
+ marginTop: 0,
+ shadowColor: 'transparent',
+
+ // backgroundColor: '#fff'
+  }
+});
+
